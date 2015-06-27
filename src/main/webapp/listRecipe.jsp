@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,15 +18,18 @@
             </tr>
         </thead>
         <tbody>
-            <c:forEach items="${recipes}" var="recipe">
+
+        <c:forEach items="${recipes}" var="recipe">
                 <tr>
-                    <td><c:out value="${recipe.recipeid}" /></td>
-                    <td><c:out value="${recipe.recipename}" /></td>
-                    <td><c:out value="${recipe.dishtype}" /></td>
-                    <td><c:out value="${recipe.dishflavour}" /></td>
-                    <td><c:out value="${recipe.dishdifficulty}" /></td>
-                    <td><a href="RecipeController?action=edit&recipeid=<c:out value="${recipe.recipeid}"/>">Update</a></td>
-                    <td><a href="RecipeController?action=delete&recipeid=<c:out value="${recipe.recipeid}"/>">Delete</a></td>
+                    <td><c:out value="${recipe.recipeId}"/></td>
+                    <td><c:out value="${recipe.name}"/></td>
+                    <td><c:out value="${recipe.type}"/></td>
+                    <td><c:out value="${recipe.flavour}"/></td>
+                    <td><c:out value="${recipe.difficulty}"/></td>
+                    <td><a href="RecipeController?action=edit&recipeId=<c:out value="${recipe.recipeId}"/>">Update</a>
+                    </td>
+                    <td><a href="RecipeController?action=delete&recipeId=<c:out value="${recipe.recipeId}"/>">Delete</a>
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>

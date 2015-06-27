@@ -17,7 +17,6 @@
             </tr>
         </thead>
         <tbody>
-        <h1>${recipes}</h1>
             <c:forEach items="${recipes}" var="recipe">
                 <tr>
                     <td><c:out value="${recipe.recipeid}" /></td>
